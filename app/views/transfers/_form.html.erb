@@ -1,0 +1,70 @@
+<%= form_for(@transfer) do |f| %>
+  <% if @transfer.errors.any? %>
+    <div id="error_explanation">
+      <p><%= pluralize(@transfer.errors.count, "error") %> prohibited this transfer from being saved:</p>
+
+      <ul>
+      <% @transfer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :COD_ALUNO %><br>
+    <%= f.number_field :COD_ALUNO, :disabled => true %>
+  </div>
+  <div class="field">
+    <%= f.label :NOME_PESSOA %><br>
+    <%= f.text_field :NOME_PESSOA, :disabled => true %>
+  </div>
+  <div class="field">
+    <%= f.label :DESC_TURNO %><br>
+    <%= f.text_field :DESC_TURNO, :disabled => true %>
+  </div>
+  <div class="field">
+    <%= f.label :PERIODO_ATUAL %><br>
+    <%= f.text_field :PERIODO_ATUAL, :disabled => true %>
+  </div>
+  <div class="field">
+    <%= f.label :COD_TURMA %><br>
+    <%= f.text_field :COD_TURMA, :disabled => true %>
+  </div>
+  <div class="field">
+    <%= f.label :desc_turno %><br>
+    <%= f.text_field :desc_turno, :disabled => true %>
+  </div>
+  <div class="field">
+    <%= f.label :COD_TURNO %><br>
+    <%= f.text_field :COD_TURNO, :disabled => true %>
+  </div>
+  <div class="field">
+    <%= f.label :Justificativa %><br>
+    <%= f.text_area :justificativa %>
+  </div>
+  <div class="field">
+    <%= f.label "Sim" %>
+    <%= f.radio_button(:aceita, true)%>
+    <%= f.label "Não" %>
+    <%= f.radio_button(:aceita, false)%><br>
+  </div>
+  <form>
+    <input type="checkbox" name='um_checkbox' id='um_checkbox' value="1">
+    <input type="submit" value="OK" id="submit_button" disabled>
+  </form>
+
+  <script>
+    $(function(){
+      $('#um_checkbox').on('change', function(){
+        if($(this).is(':checked')){
+          $('#submit_button').prop('disabled', false);
+    }
+    else{
+      $('#submit_button').prop('disabled', true);
+      }
+    });
+  });
+  </script>
+
+<% end %>

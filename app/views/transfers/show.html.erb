@@ -1,0 +1,33 @@
+<h2>De:</h2>
+<p>
+  <strong>Nome pessoa:</strong>
+  <%= @transfer.NOME_PESSOA %>
+</p>
+
+<p>
+  <strong>Desc turno:</strong>
+  <%= @transfer.DESC_TURNO %>
+</p>
+
+<p>
+  <strong>Periodo atual:</strong>
+  <%= @transfer.PERIODO_ATUAL %>
+</p>
+<h2>Para:</h2>
+<p>
+  <strong>Cod turma:</strong>
+  <%= @transfer.COD_TURMA %>
+</p>
+
+<p>
+  <strong>Desc turno:</strong>
+  <%= @transfer.desc_turno %>
+</p>
+
+<p>
+  <strong>Justificativa:</strong>
+  <%= @transfer.justificativa %>
+</p>
+
+<%= link_to 'Próximo', edit_transfer_path(@transfer) %> |
+<%= link_to 'Voltar', transfers_path %>

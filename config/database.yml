@@ -23,3 +23,25 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
+
+development_Sql:
+  adapter:  sqlserver
+  host:   192.168.0.208
+  port:   1433
+  database: SISTEMA_ACADEMICO
+  username: diogo
+  password: root
+
+
+development_biblioteca:
+  adapter: postgresql
+  database: Biblioteca
+  username: postgres
+  password: postgres
+
+
+development_postgres_transferencia:
+  adapter: postgresql
+  database: Transferencia
+  username: postgres
+  password: postgres

@@ -1,7 +1,33 @@
 Rails.application.routes.draw do
-  root to: 'visitors#index'
+  #root to: 'visitors#index'
   devise_for :users
   resources :users
+
+  root to: "home#index"
+  #devise_for :users
+  resources :searches
+  resources :finds
+  resources :bibliotecas
+  resources :refused_transfers
+  resources :performed_transfers
+  resources :transfers
+  
+  get 'finds/:id/edit', to: 'finds#edit', id: /[^\/]+/
+  get 'finds/:id/edit', to: 'finds#edit', id: /\d{5}\.\d{3}\.\d\w/ 
+  match '/finds/search' => 'finds#search', via: 'post'
+  match '/finds/create' => 'finds#create', via: 'post'
+  match '/finds/show' => 'finds#show', via: 'post'
+  match '/transfers/teste' => 'transfers#teste', via: 'post'
+  LOCALES = /en|pt\-BR/
+    scope ":locale", locale: /en|pt\-BR/ do
+      resources :users
+      resources :searches
+      resources :finds
+      resources :bibliotecas
+      resources :refused_transfers
+      resources :performed_transfers
+      resources :transfers
+    end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,25 @@
+<%= form_for(@find) do |f| %>
+  <% if @find.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@find.errors.count, "error") %> prohibited this find from being saved:</h2>
+
+      <ul>
+      <% @find.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :TURNO %><br>
+    <%= f.text_field :TURNO %>
+  </div>
+  <div class="field">
+    <%= f.label :N_PASTA %><br>
+    <%= f.text_field :N_PASTA%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

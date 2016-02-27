@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+<h2>De:</h2>
+<p>
+  <strong>Nome pessoa:</strong>
+  <%= @performed_transfer.NOME_PESSOA %>
+</p>
+
+<p>
+  <strong>Desc turno:</strong>
+  <%= @performed_transfer.DESC_TURNO %>
+</p>
+
+<p>
+  <strong>Periodo atual:</strong>
+  <%= @performed_transfer.PERIODO_ATUAL %>
+</p>
+<h2>Para:</h2>
+<p>
+  <strong>Cod turma:</strong>
+  <%= @performed_transfer.COD_TURMA %>
+</p>
+
+<p>
+  <strong>Desc turno:</strong>
+  <%= @performed_transfer.desc_turno %>
+</p>
+
+<p>
+  <strong>Justificativa:</strong>
+  <%= @performed_transfer.justificativa %>
+</p>
+
+<%= link_to 'Voltar', transfers_path %>
