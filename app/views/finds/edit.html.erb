@@ -1,20 +1,10 @@
-<section><h2>Pedido de Transferência</h2></section>
-<%= form_for(@find) do |f| %>
-<body>
-        <section>
-            <article>
-                <fieldset>
-                    <p>
-                       
-                       <p><%= f.label :COD_TURMA %></p>
-                       <p><%= f.text_field :COD_TURMA%></p> 
-                       
-                          <button>
-                            <%= image_submit_tag("botao_proximo.png")%>
-                          </button>
-                    </p>
-                </fieldset>
-            </article>    
-        </section>
-    </body>
-<% end %>
+<div class="authform">
+  <h2>Pedido de Transferência</h2>
+  <div class="form-group">
+    <%= form_for(@find) do |f| %>       
+      <p><%= f.label :COD_TURMA %></p>
+      <p><%= f.text_field :COD_TURMA%></p>                      
+      <%=submit_tag "Próximo", :class => 'btn btn-primary'%>               
+    <% end %>
+  </div>  
+</div>  

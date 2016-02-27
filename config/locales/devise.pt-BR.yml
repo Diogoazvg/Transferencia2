@@ -1,0 +1,97 @@
+pt-BR:
+  devise:
+    confirmations:
+      confirmed: "Seu endereço de email foi confirmado com sucesso."
+      send_instructions: "Você receberá um e-mail com instruções sobre como confirmar o seu endereço de e-mail em poucos minutos."
+      send_paranoid_instructions: "Se o seu endereço de e-mail existe na nossa base de dados, você receberá um e-mail com instruções sobre como confirmar o seu endereço de e-mail em poucos minutos."
+    failure:
+      already_authenticated: "Você já está conectado."
+      inactive: "Sua conta ainda não foi ativada."
+      invalid: "Inválido %{authentication_keys} ou senha."
+      locked: "Sua conta está bloqueada."
+      last_attempt: "Você tem mais uma tentativa antes de sua conta está bloqueada."
+      not_found_in_database: "Inválido %{authentication_keys} ou senha."
+      timeout: "Sua sessão expirou. Faça login novamente para continuar."
+      unauthenticated: "Você precisa entrar ou se inscrever antes de continuar."
+      unconfirmed: "Você tem que confirmar o seu endereço de e-mail antes de continuar."
+    mailer:
+      confirmation_instructions:
+        subject: "Instruções de Confirmação"
+      reset_password_instructions:
+        subject: "Reset instruções de senha"
+      unlock_instructions:
+        subject: "Desbloquear instruções"
+      password_change:
+        subject: "Senha alterada"
+    omniauth_callbacks:
+      failure: "Não foi possível autenticar-lo de %{kind} porque \"%{reason}\"."
+      success: "Autenticado com sucesso usando sua conta do %{kind}."
+    passwords:
+      no_token: "Você não pode acessar essa página sem proveniente de um e-mail de redefinição de senha. Se você vir de um e-mail de redefinição de senha, por favor, certifique-se de que você usou o URL completo fornecido."
+      send_instructions: "Você receberá um e-mail com instruções sobre como redefinir sua senha em poucos minutos."
+      send_paranoid_instructions: "Se o seu endereço de e-mail existe na nossa base de dados, você receberá um link de recuperação de senha para o seu endereço de e-mail em poucos minutos."
+      updated: "Sua senha foi alterada com sucesso. Você agora está conectado."
+      updated_not_active: "Sua senha foi alterada com sucesso."
+    registrations:
+      destroyed: "Tchau! A sua conta foi cancelada com sucesso. Nós esperamos vê-lo novamente em breve."
+      signed_up: "Bem-vindo! Você se inscreveu com sucesso."
+      signed_up_but_inactive: "Você se inscreveu com sucesso. No entanto, não foi possível assinar você porque a sua conta ainda não está ativada."
+      signed_up_but_locked: "Você se inscreveu com sucesso. No entanto, não foi possível assinar você porque sua conta está bloqueada."
+      signed_up_but_unconfirmed: "Uma mensagem com um link de confirmação foi enviado para seu endereço de e-mail. Por favor, siga o link para ativar sua conta."
+      update_needs_confirmation: "Você atualizou sua conta com êxito, mas precisamos verificar o seu novo endereço de e-mail. Por favor, verifique seu e-mail e clique no link de confirmação para confirmar o seu novo endereço de e-mail."
+      updated: "A sua conta foi atualizada com sucesso."
+    sessions:
+      signed_in: "Logado com sucesso."
+      signed_out: "Você saiu."
+      already_signed_out: "Voce já tinha saído."
+    unlocks:
+      send_instructions: "Você receberá um e-mail com instruções sobre como desbloquear a sua conta em poucos minutos."
+      send_paranoid_instructions: "Se a sua conta existe, você receberá um e-mail com instruções sobre como desbloqueá-lo em poucos minutos."
+      unlocked: "Sua conta foi desbloqueado com sucesso. Por favor efetue login para continuar."
+  errors:
+    messages:
+      already_confirmed: "já foi confirmado, por favor, tente entrar"
+      confirmation_period_expired: "deve ser confirmado dentro de %{period}, por favor, solicitar uma nova"
+      expired: "expirou, por favor, solicitar uma nova"
+      not_found: "não encontrado"
+      not_locked: "Não estava trancada"
+      not_saved:
+        one: "1 erro proibido este %{resource} de ser salvo:"
+        other: "%{count} erros proibidos este %{resource} de ser salvo:"
+  activerecord:
+    models:
+      user: Usuário
+    attributes:
+      user:
+        password: Senha
+        name: Nome
+        password_confirmation: "Confirmação de senha"
+        current_password: Senha atual
+  commands:
+  Sign out: Sair
+  Edit account: Editar Conta
+  Sign in: Entrar
+  Sign up: Criar Conta
+  Users: Usuários
+  Remember me: Lembre de mim
+  Forgot password?: Esqueceu sua senha?
+  User: Usuário
+  Leave these fields blank if you dont want to change your password: "Deixe estes campos em branco se você não quiser mudar a sua senha"
+  You must enter your current password to make changes: "Você deve digitar sua senha atual para fazer mudanças"
+  Unhappy? Well be sad to see you go: "Que pena, uma tristesa você ter que sair!!!"
+  Cancel Account: "Excluir Conta"
+  Forgot your password?: "Esqueceu sua senha?"
+  We'll send password reset instructions: "Nós enviaremos instruções para redefinição de senha"
+  Reset Password: "Trocar a senha"
+  Sign in with Facebook: "Entrar com Facebook"
+  Sign in with Google: "Entrar com conta do Google"
+  Update: "Atualizar"
+  Cancel my account: "Excluir minha conta"
+  Access denied.: "Acesso negado"
+  User updated.: "Usuário Atualizado"
+  Unable to update user.: "Não é possível atualizar usuário."
+  User deleted.: "Usuário Excluido"
+  Home: "Inicio"
+  Logout: "Sair"
+  About: "Sobre"
+  Registered users: "Usuários Cadastrados"

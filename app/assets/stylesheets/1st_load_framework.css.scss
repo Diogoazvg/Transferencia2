@@ -82,7 +82,7 @@ section {
 }
 
 h7{
-  width: 120px;
+  width: 240px;
   heigth: 10px;
   position: absolute;
   left: 980px;
@@ -91,4 +91,22 @@ h7{
 
 radio-button{
   visibility: hidden;
+}
+
+h2{
+ font-size: 20px; 
+}
+.help{
+ font-size: 10px; 
+}
+
+.top-bar{
+  background-color: #61C32E;
+}
+
+footer {
+  position: absolute;
+  font-size: 12px;
+  left: 550px;
+  top: 600px;
 }

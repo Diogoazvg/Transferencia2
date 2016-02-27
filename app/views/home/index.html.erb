@@ -1,6 +1,5 @@
 <div id="user_nav">
     <% if user_signed_in? %></br>
-      Logado como <%= current_user.email %> Não é você?</br></br>
       <%= link_to 'Acessar como aluno', '/finds' %></br></br>
       <%= link_to 'Novos pedidos (Coordenador)', '/transfers/' %></br></br>
       <%= link_to 'Pedidos negados (Coordenador)', '/refused_transfers/' %></br></br>
@@ -8,5 +7,6 @@
       <%= link_to 'Sair', destroy_user_session_path, :method => :delete %></br>
     <% else %>
       <%= link_to 'Cadastrar', new_user_registration_path %> ou <%= link_to 'Logar', new_user_session_path %>
+      </br></br></br></br><%= User.count %>  <%=t("Registered users")%>
     <% end %>  
  </div>

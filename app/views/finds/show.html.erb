@@ -1,48 +1,34 @@
-<section>
-    <fieldset>
-        <article>
-            <p>
-               <strong>TURMA ATUAL</strong><br />
-            </p>
-            <p>
-            	<strong>
-            		Nome do aluno:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            		Turno atual:&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            		Turma atual:
-            	</strong>
-            </p>
+<div class="authform">
+  <strong TURMA ATUAL></strong><br/>
+  <div class="form-group">         
+    <strong>
+      Nome do aluno:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+      Turno atual:&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+      Turma atual:
+    </strong>
 
-   			    <p>
-                <% @search_in_academico.each do |search_in_academico| %>
-  				        <em><%= search_in_academico.NOME_PESSOA %>&nbsp; &nbsp; &nbsp; &nbsp;</em>
-                  <em><%= search_in_academico.DESC_TURNO %>&nbsp; &nbsp; &nbsp;</em>
-  				        <em><%= search_in_academico.DESC_TURMA %></em>
-                <% end %>
-            </p> </br>
+    <% @search_in_academico.each do |search_in_academico| %>
+      <em><%= search_in_academico.NOME_PESSOA %>&nbsp; &nbsp; &nbsp; &nbsp;</em>
+      <em><%= search_in_academico.DESC_TURNO %>&nbsp; &nbsp; &nbsp;</em>
+      <em><%= search_in_academico.DESC_TURMA %></em>
+    <% end %>
+    </br>
 
-			      <p>
-               <p><strong>TURMA DISPONÍVEL PARA TRANSFERÊNCIA</strong><br /></p>
-               <strong><th>Nome da turma:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
-               <th>Código da Turma:&nbsp; &nbsp; &nbsp;</th>
-               <th>Turno:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
-               <th>Curso:</th></strong>
-            </p>
+    <strong>TURMA DISPONÍVEL PARA TRANSFERÊNCIA</strong><br />
+    <strong><th>Nome da turma:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
+    <th>Código da Turma:&nbsp; &nbsp; &nbsp;</th>
+    <th>Turno:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
+    <th>Curso:</th></strong>
 
-           <p>
-            	<% @search_in_academico3.each do |search_in_academico3| %>
- 					     <em>  <%= search_in_academico3.desc_turma %> &nbsp; &nbsp;</em>
-               <em>  <%= search_in_academico3.cod_turma %> &nbsp; &nbsp;</em>
-               <em>  <%= search_in_academico3.desc_turno %> &nbsp; &nbsp;</em>
-               <em>  <%= search_in_academico3.desc_curso %> &nbsp; &nbsp;</em>
-               
-  				    <% end %>
-  			   </p>
+    <% @search_in_academico3.each do |search_in_academico3| %>
+      <em>  <%= search_in_academico3.desc_turma %> &nbsp; &nbsp;</em>
+      <em>  <%= search_in_academico3.cod_turma %> &nbsp; &nbsp;</em>
+      <em>  <%= search_in_academico3.desc_turno %> &nbsp; &nbsp;</em>
+      <em>  <%= search_in_academico3.desc_curso %> &nbsp; &nbsp;</em>
+    <% end %>
 
-           <%= form_tag "/finds/create" do %>    
-            <button>
-              <%= image_submit_tag("botao_proximo.png")%>
-            </button>
-           <% end %>
-        </article>
-    </fieldset>
-</section>
+    <%= form_tag "/finds/create" do %>    
+      <%= f.submit "Próximo", :class => 'btn btn-primary'%>
+    <% end %>
+  </div>
+</div>
