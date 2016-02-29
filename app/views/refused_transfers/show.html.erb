@@ -1,33 +1,40 @@
-<p id="notice"><%= notice %></p>
-<h2>De:</h2>
-<p>
-  <strong>Nome pessoa:</strong>
-  <%= @refused_transfer.NOME_PESSOA %>
-</p>
+<div class="panel panel-success">
+  <div class="panel-heading">Dados do pedido recusado</div>
+  <div class="panel-body">
+    <table class="table">
+      <p id="notice"><%= notice %></p>
+      <h2>De:</h2>
+      <p>
+        <strong>Nome pessoa:</strong>
+        <%= @refused_transfer.NOME_PESSOA %>
+      </p>
 
-<p>
-  <strong>Desc turno:</strong>
-  <%= @refused_transfer.DESC_TURNO %>
-</p>
+      <p>
+        <strong>Desc turno:</strong>
+        <%= @refused_transfer.DESC_TURNO %>
+      </p>
 
-<p>
-  <strong>Periodo atual:</strong>
-  <%= @refused_transfer.PERIODO_ATUAL %>
-</p>
-<h2>Para:</h2>
-<p>
-  <strong>Cod turma:</strong>
-  <%= @refused_transfer.COD_TURMA %>
-</p>
+      <p>
+        <strong>Periodo atual:</strong>
+        <%= @refused_transfer.PERIODO_ATUAL %>
+      </p>
+      <h2>Para:</h2>
+      <p>
+        <strong>Cod turma:</strong>
+        <%= @refused_transfer.COD_TURMA %>
+      </p>
 
-<p>
-  <strong>Desc turno:</strong>
-  <%= @refused_transfer.desc_turno %>
-</p>
+      <p>
+        <strong>Desc turno:</strong>
+        <%= @refused_transfer.desc_turno %>
+      </p>
 
-<p>
-  <strong>Justificativa:</strong>
-  <%= @refused_transfer.justificativa %>
-</p>
+      <p>
+        <strong>Justificativa:</strong>
+        <%= @refused_transfer.justificativa %>
+      </p>
 
-<%= link_to 'Voltar', transfers_path %>
+      <%= link_to 'Voltar', transfers_path %>
+    </table>
+  </div>
+</div>      

@@ -1,0 +1,48 @@
+<div class="panel panel-success">
+  <div class="panel-heading">Dados da transferência</div>
+  <div class="panel-body">
+    <table class="table">
+      <tbody>
+        <h2>Atualmente em:</h2>
+          <tr>
+            <th>Nome do aluno</th>
+            <th>Turno atual</th>
+            <th>Turma atual</th>
+          <tr>
+
+          <tr>
+            <% @search_in_academico.each do |search_in_academico| %>
+              <td><%= search_in_academico.NOME_PESSOA %></td>
+              <td><%= search_in_academico.DESC_TURNO %></td>
+              <td><%= search_in_academico.DESC_TURMA %></td>
+            <% end %>
+          </tr>
+      </tbody>
+    </table>
+
+    <table class="table">
+      <tbody>
+        <h2>TURMA DISPONÍVEL PARA TRANSFERÊNCIA</h2>
+        <tr>
+          <th>Nome da turma:</th>
+          <th>Código da Turma:</th>
+          <th>Turno:</th>
+          <th>Curso:</th>
+        </tr>
+
+        <tr>
+          <% @search_in_academico3.each do |search_in_academico3| %>
+            <td><%= search_in_academico3.desc_turma %></td>
+            <td><%= search_in_academico3.cod_turma %></td>
+            <td><%= search_in_academico3.desc_turno %></td>
+            <td><%= search_in_academico3.desc_curso %></td>
+          <% end %>
+        </tr>
+      </tbody>
+    </table>
+
+      <td><%= form_tag "/searches/create" do %></td>
+        <td><%= button_tag "Próximo", :class => 'btn btn-success'%></td>
+      <% end %>
+  </div>
+</div>

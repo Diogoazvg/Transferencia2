@@ -6,23 +6,21 @@ Rails.application.routes.draw do
   root to: "home#index"
   #devise_for :users
   resources :searches
-  resources :finds
   resources :bibliotecas
   resources :refused_transfers
   resources :performed_transfers
   resources :transfers
   
-  get 'finds/:id/edit', to: 'finds#edit', id: /[^\/]+/
-  get 'finds/:id/edit', to: 'finds#edit', id: /\d{5}\.\d{3}\.\d\w/ 
-  match '/finds/search' => 'finds#search', via: 'post'
-  match '/finds/create' => 'finds#create', via: 'post'
-  match '/finds/show' => 'finds#show', via: 'post'
+  get 'searches/:id/edit', to: 'searches#edit', id: /[^\/]+/
+  get 'searches/:id/edit', to: 'searches#edit', id: /\d{5}\.\d{3}\.\d\w/ 
+  match '/searches/search' => 'searches#search', via: 'post'
+  match '/searches/create' => 'searches#create', via: 'post'
+  match '/searches/show' => 'searches#show', via: 'post'
   match '/transfers/teste' => 'transfers#teste', via: 'post'
   LOCALES = /en|pt\-BR/
     scope ":locale", locale: /en|pt\-BR/ do
       resources :users
       resources :searches
-      resources :finds
       resources :bibliotecas
       resources :refused_transfers
       resources :performed_transfers

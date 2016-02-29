@@ -1,9 +1,9 @@
-class FindsController < ApplicationController
+class SearchesController < ApplicationController
   before_action :authenticate_user!
   before_action :user_signed_in?
   before_action :current_user
   before_action :user_session
-  before_action :set_find, only: [:show, :edit, :update, :destroy]
+  before_action :set_search, only: [:show, :edit, :update, :destroy]
   respond_to :html
 
   def index
@@ -34,11 +34,13 @@ class FindsController < ApplicationController
     @gerar_pedido2 = Turma.turma_disponivel_salvar(@@search_in_academico_periodo_atual.periodo_atual, @@search_in_academico_codigo_do_curso.cod_curso, @@search_in_academico_codigo_do_turno.cod_turno).fetch(0).attributes
     @hash_de_pedido = @gerar_pedido1, @gerar_pedido2
     @hash_unico_salvar = @hash_de_pedido.inject(:merge)
-    @salvar = Find.new(@hash_unico_salvar)
+    @salvar = Search.new(@hash_unico_salvar)
     @salvar.save
+    flash[:notice] = 'Transferência realizada com sucesso.'
     render :new
-  end  
-     
+
+  end
+
   def search
       if aluno_existe?
         if aluno_possui_pendencia_na_biblioteca?

@@ -1,7 +1,7 @@
 <div class="authform">
   <h2>Verificação de Pendências</h2>
   <div class="form-group">
-    <%= form_tag(finds_search_path, :method => :post) do %>
+    <%= form_tag(searches_search_path, :method => :post) do %>
     <p><%= label_tag :MATRICULA %></p>
     <p><%= text_field_tag 'search_matricula', nil, placeholder: 'Insira aqui...',:autofocus => true, class: 'form-control' %>
     <p class='help'>

@@ -105,8 +105,19 @@ h2{
 }
 
 footer {
-  position: absolute;
+  position: relative;
   font-size: 12px;
-  left: 550px;
-  top: 600px;
+  margin-left: 520px;
+  margin-top: 200px;
+}
+
+.panel{
+  width: 800px;
+  heigth: 100px;
+  margin-left: 250px;
+}
+
+#novos{
+  width: 200px;
+  margin-top: 20px;
 }

@@ -1,7 +1,7 @@
 <div class="authform">
   <h2>Pedido de Transferência</h2>
   <div class="form-group">
-    <%= form_for(@find) do |f| %>       
+    <%= form_for(@search) do |f| %>       
       <p><%= f.label :COD_TURMA %></p>
       <p><%= f.text_field :COD_TURMA%></p>                      
       <%=submit_tag "Próximo", :class => 'btn btn-primary'%>               
