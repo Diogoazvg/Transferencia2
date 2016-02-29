@@ -1,12 +1,14 @@
-<div id="user_nav">
-    <% if user_signed_in? %></br>
-      <%= link_to 'Acessar como aluno', '/finds' %></br></br>
-      <%= link_to 'Novos pedidos (Coordenador)', '/transfers/' %></br></br>
-      <%= link_to 'Pedidos negados (Coordenador)', '/refused_transfers/' %></br></br>
-      <%= link_to 'Tranferências realizadas (Coordenador)', '/performed_transfers/' %></br></br></br>
-      <%= link_to 'Sair', destroy_user_session_path, :method => :delete %></br>
+  <div class="authform">
+    <div class="form-group">
+    <% if user_signed_in? %>
+        <p><%= link_to 'Acessar como aluno', finds_path,  :class => "button rigth" %></p>
+        <p><%= link_to 'Novos pedidos', transfers_path,  :class => "button rigth" %></p>
+        <p><%= link_to 'Pedidos negados', refused_transfers_path, :class => "button rigth" %></p>
+        <p><%= link_to 'Tranferências realizadas', performed_transfers_path, :class => "button rigth" %></p>
+        
     <% else %>
-      <%= link_to 'Cadastrar', new_user_registration_path %> ou <%= link_to 'Logar', new_user_session_path %>
-      </br></br></br></br><%= User.count %>  <%=t("Registered users")%>
-    <% end %>  
- </div>
+        <p><%= link_to 'Cadastrar', new_user_registration_path, :class => "button rigth" %> ou <%= link_to 'Logar', new_user_session_path, :class => "button rigth" %></p>
+        <p><%= User.count %>  <%=t("Registered users")%></p>
+    <% end %>
+    </div> 
+  </div> 

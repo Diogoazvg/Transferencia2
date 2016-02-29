@@ -10,10 +10,10 @@ class PerformedTransfersController < ApplicationController
   def index
     @performed_transfers = PerformedTransfer.where(aceita: true)
     respond_with(@performed_transfers)
-    respond_to do |format|
-      format.html
-      format.json {render json: @performed_transfers}
-    end
+    # respond_to do |format|
+    #   format.html
+    #   format.json {render json: @performed_transfers}
+    # end
   end
 
   def show
