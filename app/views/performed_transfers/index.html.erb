@@ -1,31 +1,27 @@
-<%if current_user.admin?%>
-<h1>Pedidos realizados</h1>
+<div class="panel panel-success">
+  <div class="panel-heading">Pedidos Deferidos</div>
+  <div class="panel-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nome pessoa</th>
+          <th>Desc turno &nbsp; &nbsp;</th>
+          <th>Periodo atual</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nome pessoa</th>
-      <th>Desc turno &nbsp; &nbsp;</th>
-      <th>Periodo atual</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @performed_transfers.each do |performed_transfer| %>
-      <tr>
-        <td><%= performed_transfer.NOME_PESSOA %>&nbsp; &nbsp;</td>
-        <td><%= performed_transfer.DESC_TURNO %></td>
-        <td>&nbsp; &nbsp;<%= performed_transfer.PERIODO_ATUAL %></td>
-        <td>&nbsp; &nbsp;<%= link_to 'Mostrar pedido', performed_transfer %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%else%>
-  <p>Área somente para COORDENADOR.</p>
-
-<%end%>
+      <tbody>
+        <% @performed_transfers.each do |performed_transfer| %>
+          <tr>
+            <td><%= performed_transfer.NOME_PESSOA %>&nbsp; &nbsp;</td>
+            <td><%= performed_transfer.DESC_TURNO %></td>
+            <td>&nbsp; &nbsp;<%= performed_transfer.PERIODO_ATUAL %></td>
+            <td>&nbsp; &nbsp;<%= link_to 'Mostrar pedido', performed_transfer %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <br>
+  </div>
+</div>

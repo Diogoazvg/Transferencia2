@@ -1,14 +1,15 @@
   <div class="authform">
     <div class="form-group">
     <% if user_signed_in? %>
-        <p><%= link_to 'Acessar como aluno', searches_path, :id => "novos", :class => "btn btn-success" %></p>
-        <p><%= link_to 'Novos pedidos', transfers_path, :id => "novos", :class => "btn btn-success" %></p>
-        <p><%= link_to 'Pedidos negados', refused_transfers_path, :id => "novos", :class => "btn btn-success" %></p>
-        <p><%= link_to 'Tranferências realizadas', performed_transfers_path, :id => "novos", :class => "btn btn-success" %></p>
-        
+        <tr>
+        <td><%= link_to 'Pedir de transferência', searches_path, :id => "novos", :class => "btn btn-success" %></td>
+        <td><%= link_to 'Novos pedidos', transfers_path, :id => "novos", :class => "btn btn-success" %></td>
+        <td><%= link_to 'Pedidos indeferidos', refused_transfers_path, :id => "novos", :class => "btn btn-success" %></td>
+        <td><%= link_to 'Pedidos deferidos', performed_transfers_path, :id => "novos", :class => "btn btn-success" %></td>
+        </tr>
     <% else %>
-        <p><%= link_to 'Cadastrar', new_user_registration_path, :id => "novos", :class => "btn btn-success" %> ou <%= link_to 'Logar', new_user_session_path, :id => "novos", :class => "btn btn-success" %></p>
-        <p><%= User.count %>  <%=t("Registered users")%></p>
+        <td><%= link_to 'Cadastrar', new_user_registration_path, :class => "btn btn-success" %> ou <%= link_to 'Logar', new_user_session_path, :class => "btn btn-success"  %></td>
+        </br></br><td><%= User.count %>  <%=t("Registered users")%></td>
     <% end %>
     </div> 
   </div> 

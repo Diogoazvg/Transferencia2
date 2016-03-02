@@ -1,6 +1,5 @@
-<%if current_user.admin?%>
 <div class="panel panel-success">
-  <div class="panel-heading">Pedidos recusados</div>
+  <div class="panel-heading">Pedidos indeferidos</div>
   <div class="panel-body">
     <table class="table">
       <thead>
@@ -24,8 +23,5 @@
       </tbody>
     </table>
     <br>
-    <%else%>
-      <p>Área somente para COORDENADOR.</p>
-    <%end%>
   </div>
 </div>

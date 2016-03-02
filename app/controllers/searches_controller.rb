@@ -36,8 +36,8 @@ class SearchesController < ApplicationController
     @hash_unico_salvar = @hash_de_pedido.inject(:merge)
     @salvar = Search.new(@hash_unico_salvar)
     @salvar.save
-    flash[:notice] = 'Transferência realizada com sucesso.'
-    render :new
+    flash[:notice] = 'Pedido realizado com sucesso.'
+    render :index
 
   end
 

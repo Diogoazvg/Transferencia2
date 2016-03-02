@@ -35,13 +35,11 @@
             <td><%= @transfer.justificativa %></td>
           </tr>
       </tbody>
-    </table>  
+    </table>
 
     <div class="authform">
-      <td><%= link_to 'Próximo', edit_transfer_path(@transfer), :class => "label label-success"%></td>
-      <td><%= link_to 'Voltar', transfers_path, :class => "label label-success"%></td>
-    </div>  
-      
+      <td><%= link_to 'Próximo', edit_transfer_path(@transfer), :class => "btn btn-success"%></td>
+      <td><%= link_to 'Voltar', transfers_path, :class => "btn btn-success"%></td>
+    </div>
   </div>
 </div>
-
