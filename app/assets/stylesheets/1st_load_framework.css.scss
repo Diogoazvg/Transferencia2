@@ -81,6 +81,18 @@ section {
   @extend .btn-xs;
 }
 
+h5{
+  float: left;
+    width: 770px;
+    color: gray;
+    font-size: 2.0em;
+    text-align: center;
+    font-style: italic;
+    font-family: "Indie Flower", sans-serif;
+    margin-top: 9px;
+    
+}
+
 h7{
   width: 240px;
   heigth: 10px;
@@ -121,4 +133,12 @@ footer {
   width: 250px;
   margin-top: 20px;
   margin-left: 25px;
+}
+
+.kaminari{
+  margin-left: 250px;
+}
+
+.teste{
+  color: green;
 }

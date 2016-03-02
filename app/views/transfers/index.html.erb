@@ -5,6 +5,10 @@
     <!--<%= radio_button_tag :cond, false, :checked => true%>-->
   <!--</radio-button>-->
 <!--<% end %>-->
+<div class="kaminari">
+  <%= paginate @transfers %>
+</div>
+
 <div class="panel panel-success">
   <div class="panel-heading">Pedidos de Tranferência</div>
   <div class="panel-body">
@@ -40,4 +44,8 @@
 
     <%end%>
   </div>
+</div>
+
+<div class="kaminari">
+  <%= paginate @transfers %>
 </div>

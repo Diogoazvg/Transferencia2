@@ -17,6 +17,8 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'tiny_tds'
 gem 'activerecord-sqlserver-adapter'
 gem 'pg', '~> 0.18.1'
+#A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for modern web app frameworks and ORMs
+gem 'kaminari'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

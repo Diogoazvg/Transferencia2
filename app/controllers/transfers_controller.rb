@@ -9,6 +9,7 @@ class TransfersController < ApplicationController
   def index
     #if @tra: params[:cond] == "true"
       @transfers = Transfer.where(aceita: nil)
+      @transfers = Transfer.page(params[:page]).per(15)
       respond_to do |format|
         format.html
         format.xml {render xml: @transfers}

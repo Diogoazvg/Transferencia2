@@ -9,6 +9,7 @@ class PerformedTransfersController < ApplicationController
 
   def index
     @performed_transfers = PerformedTransfer.where(aceita: true)
+    @performed_transfers = PerformedTransfer.page(params[:page]).per(15)
     respond_with(@performed_transfers)
     # respond_to do |format|
     #   format.html
