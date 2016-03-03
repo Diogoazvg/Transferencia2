@@ -8,8 +8,7 @@ class RefusedTransfersController < ApplicationController
   respond_to :html
 
   def index
-    @refused_transfers = RefusedTransfer.where(aceita: false)
-    @refused_transfers = RefusedTransfer.page(params[:page]).per(15)
+    @refused_transfers = RefusedTransfer.page(params[:page]).per(15).where(aceita: false)
     #respond_with(@refused_transfers)
     respond_to do |format|
       format.html

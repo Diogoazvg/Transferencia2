@@ -34818,3 +34818,422 @@ Processing by TransfersController#index as HTML
   Rendered layouts/_navigation.html.erb (1.7ms)
   Rendered layouts/_messages.html.erb (0.1ms)
 Completed 200 OK in 121ms (Views: 116.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/transfers" for 127.0.0.1 at 2016-03-02 16:15:25 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TransfersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1
+DEPRECATION WARNING: Passing a string to ActiveRecord::Base.establish_connection for a configuration lookup is deprecated, please pass a symbol (:development_postgres_transferencia) instead. (called from <class:Autentication_transf> at /home/diogo/Programas Ruby on Rails/Transferencia2/app/models/autentication_transf.rb:3)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "searches"[0m
+  [1m[35mTransfer Load (0.7ms)[0m  SELECT  "searches".* FROM "searches"  LIMIT 15 OFFSET 0
+  Rendered transfers/index.html.erb within layouts/application (499.1ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_navigation.html.erb (2.2ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 729ms (Views: 663.1ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/transfers/1" for 127.0.0.1 at 2016-03-02 16:16:01 -0300
+Processing by TransfersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mTransfer Load (0.4ms)[0m  SELECT  "searches".* FROM "searches"  WHERE "searches"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered transfers/show.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_navigation_links.html.erb (0.3ms)
+  Rendered layouts/_navigation.html.erb (1.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 113ms (Views: 106.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/transfers/1/edit" for 127.0.0.1 at 2016-03-02 16:16:55 -0300
+Processing by TransfersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mTransfer Load (2.1ms)[0m  SELECT  "searches".* FROM "searches"  WHERE "searches"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered transfers/_form.html.erb (57.4ms)
+  Rendered transfers/edit.html.erb within layouts/application (59.3ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_navigation.html.erb (2.1ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 162ms (Views: 155.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-02 16:18:38 -0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (5.8ms)
+  Rendered layouts/_navigation_links.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (2.0ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 164ms (Views: 162.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/transfers" for 127.0.0.1 at 2016-03-02 16:18:40 -0300
+Processing by TransfersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "searches"[0m
+  [1m[35mTransfer Load (0.6ms)[0m  SELECT  "searches".* FROM "searches"  LIMIT 15 OFFSET 0
+  Rendered transfers/index.html.erb within layouts/application (23.0ms)
+  Rendered layouts/_navigation_links.html.erb (0.3ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 113ms (Views: 108.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/transfers?page=2" for 127.0.0.1 at 2016-03-02 16:18:58 -0300
+Processing by TransfersController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "searches"
+  [1m[36mTransfer Load (0.5ms)[0m  [1mSELECT  "searches".* FROM "searches"  LIMIT 15 OFFSET 15[0m
+  Rendered transfers/index.html.erb within layouts/application (21.0ms)
+  Rendered layouts/_navigation_links.html.erb (0.3ms)
+  Rendered layouts/_navigation.html.erb (1.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 128ms (Views: 124.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/transfers" for 127.0.0.1 at 2016-03-02 16:19:01 -0300
+Processing by TransfersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "searches"[0m
+  [1m[35mTransfer Load (0.5ms)[0m  SELECT  "searches".* FROM "searches"  LIMIT 15 OFFSET 0
+  Rendered transfers/index.html.erb within layouts/application (20.0ms)
+  Rendered layouts/_navigation_links.html.erb (0.3ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 106ms (Views: 102.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/transfers?page=2" for 127.0.0.1 at 2016-03-02 16:19:11 -0300
+Processing by TransfersController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "searches"
+  [1m[36mTransfer Load (0.5ms)[0m  [1mSELECT  "searches".* FROM "searches"  LIMIT 15 OFFSET 15[0m
+  Rendered transfers/index.html.erb within layouts/application (14.6ms)
+  Rendered layouts/_navigation_links.html.erb (0.3ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 106ms (Views: 102.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/transfers" for 127.0.0.1 at 2016-03-02 16:19:14 -0300
+Processing by TransfersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "searches"[0m
+  [1m[35mTransfer Load (0.7ms)[0m  SELECT  "searches".* FROM "searches"  LIMIT 15 OFFSET 0
+  Rendered transfers/index.html.erb within layouts/application (21.0ms)
+  Rendered layouts/_navigation_links.html.erb (0.3ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 105ms (Views: 100.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/transfers/1" for 127.0.0.1 at 2016-03-02 16:19:21 -0300
+Processing by TransfersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mTransfer Load (0.4ms)[0m  SELECT  "searches".* FROM "searches"  WHERE "searches"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered transfers/show.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_navigation_links.html.erb (0.3ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 117ms (Views: 112.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-02 16:47:25 -0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_navigation_links.html.erb (0.3ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 119ms (Views: 117.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/searches" for 127.0.0.1 at 2016-03-02 16:47:38 -0300
+Processing by SearchesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered searches/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_navigation_links.html.erb (0.3ms)
+  Rendered layouts/_navigation.html.erb (1.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 89ms (Views: 86.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pages/about" for 127.0.0.1 at 2016-03-02 16:50:41 -0300
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"about"}
+  Rendered pages/about.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_navigation_links.html.erb (0.3ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 108ms (Views: 106.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/about" for 127.0.0.1 at 2016-03-02 16:50:42 -0300
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"about"}
+  Rendered pages/about.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_navigation_links.html.erb (0.2ms)
+  Rendered layouts/_navigation.html.erb (1.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 96ms (Views: 95.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-02 16:54:00 -0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (1.8ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 99ms (Views: 98.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/transfers" for 127.0.0.1 at 2016-03-02 17:12:57 -0300
+Processing by TransfersController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "searches"[0m
+  [1m[35mTransfer Load (0.5ms)[0m  SELECT  "searches".* FROM "searches"  LIMIT 15 OFFSET 0
+  Rendered transfers/index.html.erb within layouts/application (24.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.3ms)
+  Rendered layouts/_navigation.html.erb (1.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 132ms (Views: 125.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/transfers" for 127.0.0.1 at 2016-03-02 17:18:13 -0300
+Processing by TransfersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "searches"
+  [1m[36mTransfer Load (0.3ms)[0m  [1mSELECT  "searches".* FROM "searches"  LIMIT 15 OFFSET 0[0m
+  Rendered transfers/index.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_navigation_links.html.erb (0.3ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 118ms (Views: 112.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/transfers" for 127.0.0.1 at 2016-03-02 17:44:59 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TransfersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1
+DEPRECATION WARNING: Passing a string to ActiveRecord::Base.establish_connection for a configuration lookup is deprecated, please pass a symbol (:development_postgres_transferencia) instead. (called from <class:Autentication_transf> at /home/diogo/Programas Ruby on Rails/Transferencia2/app/models/autentication_transf.rb:3)
+  [1m[36m (68.7ms)[0m  [1mSELECT COUNT(*) FROM "searches"[0m
+  [1m[35mTransfer Load (0.6ms)[0m  SELECT  "searches".* FROM "searches"  LIMIT 15 OFFSET 0
+  Rendered transfers/index.html.erb within layouts/application (2138.3ms)
+  Rendered layouts/_navigation_links.html.erb (1.6ms)
+  Rendered layouts/_navigation.html.erb (810.4ms)
+  Rendered layouts/_messages.html.erb (1.1ms)
+Completed 200 OK in 4465ms (Views: 2313.5ms | ActiveRecord: 1468.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-02 17:45:21 -0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_navigation_links.html.erb (1.4ms)
+  Rendered layouts/_navigation.html.erb (3.5ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 163ms (Views: 161.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/searches" for 127.0.0.1 at 2016-03-02 17:45:32 -0300
+Processing by SearchesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered searches/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_navigation_links.html.erb (0.3ms)
+  Rendered layouts/_navigation.html.erb (1.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 127ms (Views: 125.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/searches/search" for 127.0.0.1 at 2016-03-02 17:45:37 -0300
+Processing by SearchesController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CBMqMKLDIA/89OCvotNl4OvVSWUiM/IQg174RWj/ywk=", "search_matricula"=>"201410550060", "search_condicao"=>"false", "commit"=>"Próximo"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1[0m
+DEPRECATION WARNING: Passing a string to ActiveRecord::Base.establish_connection for a configuration lookup is deprecated, please pass a symbol (:development_Sql) instead. (called from <class:Autentication_sql_server> at /home/diogo/Programas Ruby on Rails/Transferencia2/app/models/autentication_sql_server.rb:3)
+  [1m[35mSQL (2.3ms)[0m  USE [SISTEMA_ACADEMICO]
+  [1m[36mMatricula Exists (55.5ms)[0m  [1mEXEC sp_executesql N'SELECT TOP (1) 1 AS one FROM [matriculas] WHERE [matriculas].[MATRICULA] = N''201410550060'''[0m
+DEPRECATION WARNING: Passing a string to ActiveRecord::Base.establish_connection for a configuration lookup is deprecated, please pass a symbol (:development_biblioteca) instead. (called from <class:Autentication_biblioteca> at /home/diogo/Programas Ruby on Rails/Transferencia2/app/models/autentication_biblioteca.rb:3)
+  [1m[35mBiblioteca Load (59.7ms)[0m  SELECT  "nada_consta".* FROM "nada_consta"  WHERE "nada_consta"."MATRICULA" = '201410550060' AND "nada_consta"."CONDICAO" = 'false' LIMIT 1
+  [1m[36mAluno Load (75.3ms)[0m  [1mEXEC sp_executesql N'select pessoas.NOME_PESSOA, alunos.N_PASTA, turnos.DESC_TURNO, turmas.DESC_TURMA, alunos.COD_ALUNO, matriculas.PERIODO_ATUAL
+		from pessoas, turmas, alunos, matriculas, turnos 
+		where matriculas.cod_turma_ATUAL = turmas.cod_turma 
+		and pessoas.cod_pessoa = alunos.cod_pessoa 
+		and alunos.cod_aluno = matriculas.cod_aluno 
+		and matriculas.cod_turno = turnos.cod_turno 
+		and turnos.cod_turno = turmas.cod_turno
+		and turmas.ano_let = ''2015'' 
+		and matriculas.matricula = N''201410550060'''[0m
+  [1m[35mMatricula Load (5.9ms)[0m  EXEC sp_executesql N'select matriculas.periodo_atual 
+           from matriculas
+           where matriculas.periodo_atual >= 2
+           and matriculas.ano_let_atual = ''2015''
+           and matriculas.matricula = N''201410550060'''
+  [1m[36mMatricula Load (7.8ms)[0m  [1mEXEC sp_executesql N'select matriculas.cod_curso 
+           from matriculas, alunos
+           where alunos.cod_aluno = matriculas.cod_aluno
+           and  matriculas.matricula = N''201410550060'''[0m
+  [1m[35mMatricula Load (5.3ms)[0m  EXEC sp_executesql N'select matriculas.cod_turno 
+           from matriculas, alunos
+           where alunos.cod_aluno = matriculas.cod_aluno
+           and  matriculas.matricula = N''201410550060'''
+  [1m[36mTurma Load (15.9ms)[0m  [1mEXEC sp_executesql N'select turmas.desc_turma,turnos.desc_turno, 
+		turmas.cod_turma, cursos.desc_curso
+		from turmas, turnos, cursos
+		where  turnos.cod_turno = turmas.cod_turno
+		and cursos.cod_curso = turmas.cod_curso
+		and turmas.ano_let = ''2015''
+		and turmas.periodo = 2 and turmas.cod_curso =701 and turmas.cod_turno != N''M'''[0m
+  [1m[35mMatricula Load (4.8ms)[0m  EXEC sp_executesql N'select matriculas.periodo_atual 
+           from matriculas
+           where matriculas.periodo_atual >= 2
+           and matriculas.ano_let_atual = ''2015''
+           and matriculas.matricula = N''201410550060'''
+  [1m[36mMatricula Load (3.6ms)[0m  [1mEXEC sp_executesql N'select matriculas.cod_curso 
+           from matriculas, alunos
+           where alunos.cod_aluno = matriculas.cod_aluno
+           and  matriculas.matricula = N''201410550060'''[0m
+  [1m[35mMatricula Load (3.2ms)[0m  EXEC sp_executesql N'select matriculas.cod_turno 
+           from matriculas, alunos
+           where alunos.cod_aluno = matriculas.cod_aluno
+           and  matriculas.matricula = N''201410550060'''
+  [1m[36mTurma Load (4.2ms)[0m  [1mEXEC sp_executesql N'select turmas.desc_turma,turnos.desc_turno, 
+		turmas.cod_turma, cursos.desc_curso
+		from turmas, turnos, cursos
+		where  turnos.cod_turno = turmas.cod_turno
+		and cursos.cod_curso = turmas.cod_curso
+		and turmas.ano_let = ''2015''
+		and turmas.periodo = 2 and turmas.cod_curso =701 and turmas.cod_turno != N''M'''[0m
+  Rendered searches/show.html.erb within layouts/application (13.6ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (1.3ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 1757ms (Views: 123.6ms | ActiveRecord: 1110.4ms)
+
+
+Started POST "/searches/create" for 127.0.0.1 at 2016-03-02 17:46:01 -0300
+Processing by SearchesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CBMqMKLDIA/89OCvotNl4OvVSWUiM/IQg174RWj/ywk=", "button"=>""}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mAluno Load (20.1ms)[0m  [1mEXEC sp_executesql N'select pessoas.NOME_PESSOA, alunos.COD_ALUNO, alunos.N_PASTA, turnos.DESC_TURNO, matriculas.PERIODO_ATUAL
+		from pessoas, turmas, alunos, matriculas, turnos 
+		where matriculas.cod_turma_ATUAL = turmas.cod_turma 
+		and pessoas.cod_pessoa = alunos.cod_pessoa 
+		and alunos.cod_aluno = matriculas.cod_aluno 
+		and matriculas.cod_turno = turnos.cod_turno 
+		and turnos.cod_turno = turmas.cod_turno
+		and turmas.ano_let = ''2015'' 
+		and matriculas.matricula = N''201410550060'''[0m
+  [1m[35mTurma Load (13.1ms)[0m  EXEC sp_executesql N'select turmas.DESC_TURMA,turnos.desc_turno,turnos.COD_TURNO, 
+		turmas.COD_TURMA
+		from turmas, turnos, cursos
+		where  turnos.cod_turno = turmas.cod_turno
+		and cursos.cod_curso = turmas.cod_curso
+		and turmas.ano_let = ''2015''
+		and turmas.periodo = 2 and turmas.cod_curso =701 and turmas.cod_turno != N''M'''
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (13.3ms)[0m  INSERT INTO "searches" ("COD_ALUNO", "COD_TURMA", "COD_TURNO", "DESC_TURMA", "DESC_TURNO", "NOME_PESSOA", "N_PASTA", "PERIODO_ATUAL", "desc_turno") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["COD_ALUNO", 684981], ["COD_TURMA", "20151.055.2N"], ["COD_TURNO", "N"], ["DESC_TURMA", "Informática, 2º período ( 2015/1 )"], ["DESC_TURNO", "Matutino"], ["NOME_PESSOA", "Guilherme de Souza Reis"], ["N_PASTA", "48226"], ["PERIODO_ATUAL", 2], ["desc_turno", "Noturno"]]
+  [1m[36m (21.4ms)[0m  [1mCOMMIT[0m
+  Rendered searches/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (1.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 225ms (Views: 99.1ms | ActiveRecord: 68.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-02 17:47:12 -0300
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered home/index.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_navigation_links.html.erb (0.3ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 92ms (Views: 91.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/transfers" for 127.0.0.1 at 2016-03-02 17:47:14 -0300
+Processing by TransfersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "searches"
+  [1m[36mTransfer Load (0.3ms)[0m  [1mSELECT  "searches".* FROM "searches"  LIMIT 15 OFFSET 0[0m
+  Rendered transfers/index.html.erb within layouts/application (13.1ms)
+  Rendered layouts/_navigation_links.html.erb (0.3ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 104ms (Views: 100.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-02 17:47:21 -0300
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered home/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_navigation_links.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (2.3ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 90ms (Views: 88.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/transfers" for 127.0.0.1 at 2016-03-02 17:47:23 -0300
+Processing by TransfersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "searches"
+  [1m[36mTransfer Load (0.5ms)[0m  [1mSELECT  "searches".* FROM "searches"  LIMIT 15 OFFSET 0[0m
+  Rendered transfers/index.html.erb within layouts/application (5.4ms)
+  Rendered layouts/_navigation_links.html.erb (0.3ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 103ms (Views: 98.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/transfers/23" for 127.0.0.1 at 2016-03-02 17:47:30 -0300
+Processing by TransfersController#show as HTML
+  Parameters: {"id"=>"23"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTransfer Load (0.5ms)[0m  [1mSELECT  "searches".* FROM "searches"  WHERE "searches"."id" = $1 LIMIT 1[0m  [["id", 23]]
+  Rendered transfers/show.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_navigation_links.html.erb (0.3ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 105ms (Views: 99.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/transfers/23/edit" for 127.0.0.1 at 2016-03-02 17:47:41 -0300
+Processing by TransfersController#edit as HTML
+  Parameters: {"id"=>"23"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTransfer Load (0.5ms)[0m  [1mSELECT  "searches".* FROM "searches"  WHERE "searches"."id" = $1 LIMIT 1[0m  [["id", 23]]
+  Rendered transfers/_form.html.erb (57.9ms)
+  Rendered transfers/edit.html.erb within layouts/application (70.6ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (1.3ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 189ms (Views: 185.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/transfers/23/edit" for 127.0.0.1 at 2016-03-02 17:48:49 -0300
+Processing by TransfersController#edit as HTML
+  Parameters: {"id"=>"23"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTransfer Load (0.4ms)[0m  [1mSELECT  "searches".* FROM "searches"  WHERE "searches"."id" = $1 LIMIT 1[0m  [["id", 23]]
+  Rendered transfers/_form.html.erb (5.7ms)
+  Rendered transfers/edit.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_navigation_links.html.erb (0.3ms)
+  Rendered layouts/_navigation.html.erb (1.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 111ms (Views: 105.3ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/transfers/23" for 127.0.0.1 at 2016-03-02 17:49:02 -0300
+Processing by TransfersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CBMqMKLDIA/89OCvotNl4OvVSWUiM/IQg174RWj/ywk=", "transfer"=>{"justificativa"=>"Pq eu quero.", "aceita"=>"true"}, "um_checkbox"=>"1", "button"=>"", "id"=>"23"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTransfer Load (0.3ms)[0m  [1mSELECT  "searches".* FROM "searches"  WHERE "searches"."id" = $1 LIMIT 1[0m  [["id", 23]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "searches" SET "aceita" = $1, "justificativa" = $2 WHERE "searches"."id" = 23[0m  [["aceita", "t"], ["justificativa", "Pq eu quero."]]
+  [1m[35m (16.3ms)[0m  COMMIT
+CONNECTION RETRY: ActiveRecord::ConnectionAdapters::SQLServerAdapter retry #0.

@@ -25,7 +25,7 @@
       <tbody>
         <% @transfers.each do |transfer| %>
           <tr>
-            <td><%= transfer.NOME_PESSOA %>&nbsp; &nbsp;</td>
+            <td><%= transfer.NOME_PESSOA %></td>
             <td><%= transfer.DESC_TURNO %></td>
             <td>&nbsp; &nbsp;<%= transfer.PERIODO_ATUAL %></td>
             <td>&nbsp; &nbsp;<%= link_to 'Mostrar pedido', transfer %></td>
