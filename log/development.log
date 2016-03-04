@@ -35237,3 +35237,224 @@ Processing by TransfersController#update as HTML
   [1m[36mSQL (0.4ms)[0m  [1mUPDATE "searches" SET "aceita" = $1, "justificativa" = $2 WHERE "searches"."id" = 23[0m  [["aceita", "t"], ["justificativa", "Pq eu quero."]]
   [1m[35m (16.3ms)[0m  COMMIT
 CONNECTION RETRY: ActiveRecord::ConnectionAdapters::SQLServerAdapter retry #0.
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-04 13:05:32 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered home/index.html.erb within layouts/application (111.3ms)
+  Rendered layouts/_navigation_links.html.erb (0.9ms)
+  Rendered layouts/_navigation.html.erb (1554.8ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 2529ms (Views: 2482.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-04 13:05:34 -0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_navigation_links.html.erb (0.3ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 98ms (Views: 96.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/transfers" for 127.0.0.1 at 2016-03-04 13:05:55 -0300
+Processing by TransfersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1
+DEPRECATION WARNING: Passing a string to ActiveRecord::Base.establish_connection for a configuration lookup is deprecated, please pass a symbol (:development_postgres_transferencia) instead. (called from <class:Autentication_transf> at /home/diogo/Programas Ruby on Rails/Transferencia2/app/models/autentication_transf.rb:3)
+  [1m[36m (103.5ms)[0m  [1mSELECT COUNT(*) FROM "searches"  WHERE "searches"."aceita" IS NULL[0m
+  [1m[35mTransfer Load (0.5ms)[0m  SELECT  "searches".* FROM "searches"  WHERE "searches"."aceita" IS NULL LIMIT 15 OFFSET 0
+  Rendered transfers/index.html.erb within layouts/application (1501.2ms)
+  Rendered layouts/_navigation_links.html.erb (0.3ms)
+  Rendered layouts/_navigation.html.erb (1.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 1712ms (Views: 197.8ms | ActiveRecord: 1402.6ms)
+
+
+Started GET "/searches" for 127.0.0.1 at 2016-03-04 13:06:00 -0300
+Processing by SearchesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered searches/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (2.0ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 123ms (Views: 120.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/searches/search" for 127.0.0.1 at 2016-03-04 13:06:05 -0300
+Processing by SearchesController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CBMqMKLDIA/89OCvotNl4OvVSWUiM/IQg174RWj/ywk=", "search_matricula"=>"201420550241", "search_condicao"=>"false", "commit"=>"Próximo"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1
+DEPRECATION WARNING: Passing a string to ActiveRecord::Base.establish_connection for a configuration lookup is deprecated, please pass a symbol (:development_Sql) instead. (called from <class:Autentication_sql_server> at /home/diogo/Programas Ruby on Rails/Transferencia2/app/models/autentication_sql_server.rb:3)
+  [1m[36mSQL (0.7ms)[0m  [1mUSE [SISTEMA_ACADEMICO][0m
+  [1m[35mMatricula Exists (1.4ms)[0m  EXEC sp_executesql N'SELECT TOP (1) 1 AS one FROM [matriculas] WHERE [matriculas].[MATRICULA] = N''201420550241'''
+DEPRECATION WARNING: Passing a string to ActiveRecord::Base.establish_connection for a configuration lookup is deprecated, please pass a symbol (:development_biblioteca) instead. (called from <class:Autentication_biblioteca> at /home/diogo/Programas Ruby on Rails/Transferencia2/app/models/autentication_biblioteca.rb:3)
+  [1m[36mBiblioteca Load (82.0ms)[0m  [1mSELECT  "nada_consta".* FROM "nada_consta"  WHERE "nada_consta"."MATRICULA" = '201420550241' AND "nada_consta"."CONDICAO" = 'false' LIMIT 1[0m
+  [1m[35mAluno Load (1.4ms)[0m  EXEC sp_executesql N'select pessoas.NOME_PESSOA, alunos.N_PASTA, turnos.DESC_TURNO, turmas.DESC_TURMA, alunos.COD_ALUNO, matriculas.PERIODO_ATUAL
+		from pessoas, turmas, alunos, matriculas, turnos 
+		where matriculas.cod_turma_ATUAL = turmas.cod_turma 
+		and pessoas.cod_pessoa = alunos.cod_pessoa 
+		and alunos.cod_aluno = matriculas.cod_aluno 
+		and matriculas.cod_turno = turnos.cod_turno 
+		and turnos.cod_turno = turmas.cod_turno
+		and turmas.ano_let = ''2015'' 
+		and matriculas.matricula = N''201420550241'''
+  [1m[36mMatricula Load (1.0ms)[0m  [1mEXEC sp_executesql N'select matriculas.periodo_atual 
+           from matriculas
+           where matriculas.periodo_atual >= 2
+           and matriculas.ano_let_atual = ''2015''
+           and matriculas.matricula = N''201420550241'''[0m
+  [1m[35mMatricula Load (0.9ms)[0m  EXEC sp_executesql N'select matriculas.cod_curso 
+           from matriculas, alunos
+           where alunos.cod_aluno = matriculas.cod_aluno
+           and  matriculas.matricula = N''201420550241'''
+  [1m[36mMatricula Load (1.0ms)[0m  [1mEXEC sp_executesql N'select matriculas.cod_turno 
+           from matriculas, alunos
+           where alunos.cod_aluno = matriculas.cod_aluno
+           and  matriculas.matricula = N''201420550241'''[0m
+  [1m[35mTurma Load (3.1ms)[0m  EXEC sp_executesql N'select turmas.desc_turma,turnos.desc_turno, 
+		turmas.cod_turma, cursos.desc_curso
+		from turmas, turnos, cursos
+		where  turnos.cod_turno = turmas.cod_turno
+		and cursos.cod_curso = turmas.cod_curso
+		and turmas.ano_let = ''2015''
+		and turmas.periodo = 2 and turmas.cod_curso =701 and turmas.cod_turno != N''M'''
+  [1m[36mMatricula Load (1.1ms)[0m  [1mEXEC sp_executesql N'select matriculas.periodo_atual 
+           from matriculas
+           where matriculas.periodo_atual >= 2
+           and matriculas.ano_let_atual = ''2015''
+           and matriculas.matricula = N''201420550241'''[0m
+  [1m[35mMatricula Load (0.9ms)[0m  EXEC sp_executesql N'select matriculas.cod_curso 
+           from matriculas, alunos
+           where alunos.cod_aluno = matriculas.cod_aluno
+           and  matriculas.matricula = N''201420550241'''
+  [1m[36mMatricula Load (1.3ms)[0m  [1mEXEC sp_executesql N'select matriculas.cod_turno 
+           from matriculas, alunos
+           where alunos.cod_aluno = matriculas.cod_aluno
+           and  matriculas.matricula = N''201420550241'''[0m
+  [1m[35mTurma Load (2.9ms)[0m  EXEC sp_executesql N'select turmas.desc_turma,turnos.desc_turno, 
+		turmas.cod_turma, cursos.desc_curso
+		from turmas, turnos, cursos
+		where  turnos.cod_turno = turmas.cod_turno
+		and cursos.cod_curso = turmas.cod_curso
+		and turmas.ano_let = ''2015''
+		and turmas.periodo = 2 and turmas.cod_curso =701 and turmas.cod_turno != N''M'''
+  Rendered searches/show.html.erb within layouts/application (12.5ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (1.7ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 1365ms (Views: 113.4ms | ActiveRecord: 749.9ms)
+
+
+Started POST "/searches/create" for 127.0.0.1 at 2016-03-04 13:06:12 -0300
+Processing by SearchesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CBMqMKLDIA/89OCvotNl4OvVSWUiM/IQg174RWj/ywk=", "button"=>""}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mAluno Load (1.3ms)[0m  EXEC sp_executesql N'select pessoas.NOME_PESSOA, alunos.COD_ALUNO, alunos.N_PASTA, turnos.DESC_TURNO, matriculas.PERIODO_ATUAL
+		from pessoas, turmas, alunos, matriculas, turnos 
+		where matriculas.cod_turma_ATUAL = turmas.cod_turma 
+		and pessoas.cod_pessoa = alunos.cod_pessoa 
+		and alunos.cod_aluno = matriculas.cod_aluno 
+		and matriculas.cod_turno = turnos.cod_turno 
+		and turnos.cod_turno = turmas.cod_turno
+		and turmas.ano_let = ''2015'' 
+		and matriculas.matricula = N''201420550241'''
+  [1m[36mTurma Load (3.0ms)[0m  [1mEXEC sp_executesql N'select turmas.DESC_TURMA,turnos.desc_turno,turnos.COD_TURNO, 
+		turmas.COD_TURMA
+		from turmas, turnos, cursos
+		where  turnos.cod_turno = turmas.cod_turno
+		and cursos.cod_curso = turmas.cod_curso
+		and turmas.ano_let = ''2015''
+		and turmas.periodo = 2 and turmas.cod_curso =701 and turmas.cod_turno != N''M'''[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (13.3ms)[0m  [1mINSERT INTO "searches" ("COD_ALUNO", "COD_TURMA", "COD_TURNO", "DESC_TURMA", "DESC_TURNO", "NOME_PESSOA", "N_PASTA", "PERIODO_ATUAL", "desc_turno") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["COD_ALUNO", 725323], ["COD_TURMA", "20151.055.2N"], ["COD_TURNO", "N"], ["DESC_TURMA", "Informática, 2º período ( 2015/1 )"], ["DESC_TURNO", "Matutino"], ["NOME_PESSOA", "Thaynara Cristina Reis Souza"], ["N_PASTA", "49061"], ["PERIODO_ATUAL", 2], ["desc_turno", "Noturno"]]
+  [1m[35m (21.3ms)[0m  COMMIT
+  Rendered searches/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_navigation_links.html.erb (0.3ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 198ms (Views: 109.7ms | ActiveRecord: 39.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-04 13:06:23 -0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_navigation_links.html.erb (0.3ms)
+  Rendered layouts/_navigation.html.erb (1.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 101ms (Views: 99.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/transfers" for 127.0.0.1 at 2016-03-04 13:06:25 -0300
+Processing by TransfersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "searches"  WHERE "searches"."aceita" IS NULL[0m
+  [1m[35mTransfer Load (0.5ms)[0m  SELECT  "searches".* FROM "searches"  WHERE "searches"."aceita" IS NULL LIMIT 15 OFFSET 0
+  Rendered transfers/index.html.erb within layouts/application (15.7ms)
+  Rendered layouts/_navigation_links.html.erb (0.3ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 119ms (Views: 115.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/transfers/24" for 127.0.0.1 at 2016-03-04 13:06:28 -0300
+Processing by TransfersController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mTransfer Load (0.5ms)[0m  SELECT  "searches".* FROM "searches"  WHERE "searches"."id" = $1 LIMIT 1  [["id", 24]]
+  [1m[36mTurma Load (30.1ms)[0m  [1mEXEC sp_executesql N'select (PESSOAS.NOME_PESSOA) 
+    	from matriculas, pessoas, alunos, turmas, cursos
+		where matriculas.COD_TURMA_ATUAL = turmas.COD_TURMA
+		and ALUNOS.COD_PESSOA = PESSOAS.COD_PESSOA
+		and MATRICULAS.COD_ALUNO = ALUNOS.COD_ALUNO
+		and MATRICULAS.COD_CURSO = CURSOS.COD_CURSO
+		and TURMAS.COD_CURSO = CURSOS.COD_CURSO
+		and TURMAS.COD_TURMA = N''20151.055.2N'''[0m
+  Rendered transfers/show.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_navigation_links.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (1.7ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 133ms (Views: 97.1ms | ActiveRecord: 31.0ms)
+
+
+Started GET "/transfers/24" for 127.0.0.1 at 2016-03-04 13:09:48 -0300
+Processing by TransfersController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTransfer Load (0.4ms)[0m  [1mSELECT  "searches".* FROM "searches"  WHERE "searches"."id" = $1 LIMIT 1[0m  [["id", 24]]
+  [1m[35mTurma Load (36.1ms)[0m  EXEC sp_executesql N'select (PESSOAS.NOME_PESSOA) 
+    	from matriculas, pessoas, alunos, turmas, cursos
+		where matriculas.COD_TURMA_ATUAL = turmas.COD_TURMA
+		and ALUNOS.COD_PESSOA = PESSOAS.COD_PESSOA
+		and MATRICULAS.COD_ALUNO = ALUNOS.COD_ALUNO
+		and MATRICULAS.COD_CURSO = CURSOS.COD_CURSO
+		and TURMAS.COD_CURSO = CURSOS.COD_CURSO
+		and TURMAS.COD_TURMA = N''20151.055.2N'''
+  Rendered transfers/show.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_navigation_links.html.erb (0.3ms)
+  Rendered layouts/_navigation.html.erb (1.3ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 152ms (Views: 107.5ms | ActiveRecord: 37.0ms)
+
+
+Started GET "/transfers/24" for 127.0.0.1 at 2016-03-04 13:10:45 -0300
+Processing by TransfersController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mTransfer Load (0.3ms)[0m  SELECT  "searches".* FROM "searches"  WHERE "searches"."id" = $1 LIMIT 1  [["id", 24]]
+  [1m[36mTurma Load (34.3ms)[0m  [1mEXEC sp_executesql N'select (PESSOAS.NOME_PESSOA) 
+    	from matriculas, pessoas, alunos, turmas, cursos
+		where matriculas.COD_TURMA_ATUAL = turmas.COD_TURMA
+		and ALUNOS.COD_PESSOA = PESSOAS.COD_PESSOA
+		and MATRICULAS.COD_ALUNO = ALUNOS.COD_ALUNO
+		and MATRICULAS.COD_CURSO = CURSOS.COD_CURSO
+		and TURMAS.COD_CURSO = CURSOS.COD_CURSO
+		and TURMAS.COD_TURMA = N''20151.055.2N'''[0m
+  Rendered transfers/show.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_navigation_links.html.erb (0.3ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 144ms (Views: 104.3ms | ActiveRecord: 34.9ms)

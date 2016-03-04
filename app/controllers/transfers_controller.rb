@@ -35,17 +35,13 @@ class TransfersController < ApplicationController
 
   def update
     if transfer_params[:aceita] == "true"
-      print "ESTOU AQUI !!!!!"
-      puts transfer_params[:aceita]
       @transfer.update(transfer_params)
       @dados2 = Matricula.transferencia(@@var.COD_TURNO, @@var.COD_TURMA, @@var.COD_ALUNO)
       respond_with(@transfer)
       flash[:notice] = "Tranferência realizada com sucesso."
-      #redirect_to :index
-    else #transfer_params[:aceita] == "false"
+    else
       @transfer.update(transfer_params)
       render :edit
-      #flash[:notice] = "Pedido negado."
     end
   end
 
@@ -58,6 +54,7 @@ class TransfersController < ApplicationController
     def set_transfer
       @transfer = Transfer.find(params[:id])
       @@var = @transfer
+      @dados3 = Turma.alunos_por_turma(@@var.COD_TURMA).count
     end
 
     def transfer_params

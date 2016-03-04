@@ -22,4 +22,14 @@ class Turma < Autentication_sql_server
 		and turmas.ano_let = '2015'
 		and turmas.periodo = ? and turmas.cod_curso =? and turmas.cod_turno != ?", periodo_atual, codigo_do_curso, codigo_do_turno]
 	}
+
+	scope :alunos_por_turma, ->(codigo_turma) {Turma.find_by_sql ["select (PESSOAS.NOME_PESSOA) 
+    	from matriculas, pessoas, alunos, turmas, cursos
+		where matriculas.COD_TURMA_ATUAL = turmas.COD_TURMA
+		and ALUNOS.COD_PESSOA = PESSOAS.COD_PESSOA
+		and MATRICULAS.COD_ALUNO = ALUNOS.COD_ALUNO
+		and MATRICULAS.COD_CURSO = CURSOS.COD_CURSO
+		and TURMAS.COD_CURSO = CURSOS.COD_CURSO
+		and TURMAS.COD_TURMA = ?", codigo_turma]
+	}
 end
