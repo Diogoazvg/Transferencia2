@@ -41,6 +41,7 @@ class TransfersController < ApplicationController
       flash[:notice] = "Tranferência realizada com sucesso."
     else
       @transfer.update(transfer_params)
+      flash[:notice] = "Justificativa anexada com sucesso."
       render :edit
     end
   end

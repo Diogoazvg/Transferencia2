@@ -29,7 +29,10 @@
             <td><%= transfer.DESC_TURNO %></td>
             <td>&nbsp; &nbsp;<%= transfer.PERIODO_ATUAL %></td>
             <td>&nbsp; &nbsp;<%= link_to 'Mostrar pedido', transfer, :class => 'btn btn-success' %></td>
-            <td><%= link_to 'Visualizar justificativa', transfer.my_file_url, :target => "_blank", :class => 'btn btn-success' %><td>
+
+            <%if current_user.admin?%>
+              td><%= link_to 'Visualizar justificativa', transfer.my_file_url, :target => "_blank", :class => 'btn btn-success' %><td>
+            <%end%>
             <!--<td><%= link_to 'Mostrar pedido', edit_transfer_path(transfer) %></td>-->
             <!--<td><%= link_to 'Destroy', transfer, method: :delete, data: { confirm: 'Tem certeza?' } %></td>-->
           </tr>
