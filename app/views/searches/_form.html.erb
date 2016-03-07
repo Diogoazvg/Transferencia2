@@ -12,14 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :TURNO %><br>
-    <%= f.text_field :TURNO %>
-  </div>
-  <div class="field">
-    <%= f.label :N_PASTA %><br>
-    <%= f.text_field :N_PASTA%>
-  </div>
-  <div class="actions">
-    <%= f.submit "Próximo", :class => 'btn btn-primary'%>
+    <%= f.label :my_file %>
+    <%= f.file_field :my_file %>
+    <%= f.submit%>
   </div>
 <% end %>

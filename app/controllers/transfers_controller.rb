@@ -45,6 +45,11 @@ class TransfersController < ApplicationController
     end
   end
 
+  def update2
+    @transfer = Transfer.update(params[:file])
+    render :edit
+  end
+
   def destroy
     @transfer.destroy
     respond_with(@transfer)
@@ -58,6 +63,6 @@ class TransfersController < ApplicationController
     end
 
     def transfer_params
-      params.require(:transfer).permit(:COD_TURNO, :COD_TURMA, :COD_ALUNO, :justificativa, :aceita, :cond)
+      params.require(:transfer).permit(:COD_TURNO, :COD_TURMA, :COD_ALUNO, :justificativa, :aceita, :cond, :my_file)
     end
 end

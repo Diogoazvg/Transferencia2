@@ -29,6 +29,12 @@ class SearchesController < ApplicationController
   #def new
   #end
 
+# def new
+#   @search = Search.new
+#   @search = Search.new(params[:file])
+#   @search.save
+# end
+
   def create
     @gerar_pedido1 = Aluno.turno_atual_salvar(@@matricula).fetch(0).attributes
     @gerar_pedido2 = Turma.turma_disponivel_salvar(@@search_in_academico_periodo_atual.periodo_atual, @@search_in_academico_codigo_do_curso.cod_curso, @@search_in_academico_codigo_do_turno.cod_turno).fetch(0).attributes
@@ -71,7 +77,7 @@ class SearchesController < ApplicationController
   end
 
   def aluno_possui_pendencia_na_biblioteca?
-    @search = Biblioteca.find_by(MATRICULA: params[:search_matricula], CONDICAO: params[:search_condicao])
+    @search1 = Biblioteca.find_by(MATRICULA: params[:search_matricula], CONDICAO: params[:search_condicao])
   end
 
   def turno_atual
@@ -105,4 +111,13 @@ class SearchesController < ApplicationController
       end
     end
   end
+
+  # private
+  #   def set_search
+  #     #@@file.my_file = params[:file]
+  #   end
+
+  #   def search_params
+  #     params.require(:search).permit(:file)
+  #   end
 end

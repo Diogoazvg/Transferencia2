@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160226222447) do
+ActiveRecord::Schema.define(version: 20160304205809) do
+
+  create_table "searches", force: true do |t|
+    t.string  "NOME_PESSOA"
+    t.string  "N_PASTA"
+    t.string  "DESC_TURNO"
+    t.string  "PERIODO_ATUAL"
+    t.integer "COD_ALUNO"
+    t.string  "COD_TURMA"
+    t.string  "DESC_TURMA"
+    t.string  "COD_TURNO"
+    t.string  "justificativa"
+    t.boolean "aceita"
+    t.string  "file"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",    null: false

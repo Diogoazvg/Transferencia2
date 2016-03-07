@@ -17,8 +17,11 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'tiny_tds'
 gem 'activerecord-sqlserver-adapter'
 gem 'pg', '~> 0.18.1'
-#A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for modern web app frameworks and ORMs
+# A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for modern web app frameworks and ORMs
 gem 'kaminari'
+# This gem provides a simple and extremely flexible way to upload files from Ruby applications. It works well with Rack based web applications, such as Ruby on Rails.
+gem 'carrierwave'
+#gem 'rmagick', '~> 2.15', '>= 2.15.4'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
