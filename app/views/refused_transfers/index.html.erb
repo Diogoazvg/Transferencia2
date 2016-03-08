@@ -20,7 +20,7 @@
             <td><%= refused_transfer.NOME_PESSOA %>&nbsp; &nbsp;</td>
             <td><%= refused_transfer.DESC_TURNO %></td>
             <td>&nbsp; &nbsp;<%= refused_transfer.PERIODO_ATUAL %></td>
-            <td>&nbsp; &nbsp;<%= link_to 'Mostrar pedido', refused_transfer %></td>
+            <td>&nbsp; &nbsp;<%= link_to 'Mostrar pedido', refused_transfer, :class => 'btn btn-success' %></td>
           </tr>
         <% end %>
       </tbody>

@@ -20,7 +20,7 @@
             <td><%= performed_transfer.NOME_PESSOA %>&nbsp; &nbsp;</td>
             <td><%= performed_transfer.DESC_TURNO %></td>
             <td>&nbsp; &nbsp;<%= performed_transfer.PERIODO_ATUAL %></td>
-            <td>&nbsp; &nbsp;<%= link_to 'Mostrar pedido', performed_transfer %></td>
+            <td>&nbsp; &nbsp;<%= link_to 'Mostrar pedido', performed_transfer, :class => 'btn btn-success' %></td>
           </tr>
         <% end %>
       </tbody>
