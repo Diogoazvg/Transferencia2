@@ -16,7 +16,6 @@ Rails.application.routes.draw do
   match '/searches/search' => 'searches#search', via: 'post'
   match '/searches/create' => 'searches#create', via: 'post'
   match '/searches/show' => 'searches#show', via: 'post'
-  match '/transfers/update2' => 'transfers#update2', via: 'post'
   match '/transfers/teste' => 'transfers#teste', via: 'post'
   LOCALES = /en|pt\-BR/
     scope ":locale", locale: /en|pt\-BR/ do

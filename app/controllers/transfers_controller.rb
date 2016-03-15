@@ -34,22 +34,33 @@ class TransfersController < ApplicationController
   end
 
   def update
+    puts "OLHA, ESTOU AQUI PORRA!!!"
+    puts transfer_params[:aceita]
     if transfer_params[:aceita] == "true"
-      @transfer.update(transfer_params)
       @dados2 = Matricula.transferencia(@@var.COD_TURNO, @@var.COD_TURMA, @@var.COD_ALUNO)
-      respond_with(@transfer)
-      flash[:notice] = "Tranferência realizada com sucesso."
-    else
       @transfer.update(transfer_params)
-      flash[:notice] = "Justificativa anexada com sucesso."
-      render :edit
+      #respond_with(@transfer)
+      flash[:notice] = "Tranferência realizada com sucesso."
+      redirect_to '/transfers'
+    end
+      
+    if transfer_params[:aceita] == "false"
+      @transfer.update(transfer_params)
+      flash[:notice] = "Pedido negado com sucesso."
+      redirect_to '/transfers'
+    end
+
+    if transfer_params[:aceita] == nil
+      @transfer.update(transfer_params)
+      flash[:notice] = "justificativa anxada com sucesso."
+      redirect_to '/transfers'
     end
   end
 
-  def update2
-    @transfer = Transfer.update(params[:file])
-    render :edit
-  end
+  # def update2
+  #   @transfer = Transfer.update(params[:file])
+  #   render :edit
+  # end
 
   def destroy
     @transfer.destroy

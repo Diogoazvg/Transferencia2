@@ -4,4 +4,5 @@ class Transfer < Autentication_transf
 	mount_uploader :my_file, FileUploader
 
 	#validates_presence_of :justificativa
+	#validates :COD_ALUNO, uniqueness: true
 end

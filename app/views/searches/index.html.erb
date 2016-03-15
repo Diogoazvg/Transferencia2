@@ -2,11 +2,10 @@
   <h2>Verificação de Pendências</h2>
   <div class="form-group">
     <%= form_tag(searches_search_path, :method => :post) do %>
-    <p><%= label_tag :MATRÍCULA %></p>
-    <p><%= text_field_tag 'search_matricula', nil, placeholder: 'Insira aqui...',:autofocus => true, class: 'form-control' %>
+    <%= label_tag :MATRÍCULA %>
+    <%= text_field_tag 'search_matricula', nil, placeholder: 'Insira aqui...',:autofocus => true, class: 'form-control' %>
     <p class='help'>
-      Insira o número de matrícula contido na sua carteirinha de aluno.
-    </p>
+      Insira o número de matrícula contido na sua carteirinha de aluno.</p>
     <radio-button>
       <%= radio_button_tag 'search_condicao',false, :checked => true%>
     </radio-button>

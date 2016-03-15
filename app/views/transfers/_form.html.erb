@@ -76,12 +76,9 @@
           <div class="field">
             <%= f.label :Anexar_arquivo %>
             <%= f.file_field :my_file, class: 'form-control' %></br>
-            <%=submit_tag "OK", :class => 'btn btn-success'%>
-          </div>
-          
-        <%end%>
-          
-                 
+            <%= f.button "OK", :class => 'btn btn-success'%>
+          </div>   
+        <%end%>               
       </table>
     </div>
   </div>

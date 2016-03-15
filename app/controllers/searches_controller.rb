@@ -42,7 +42,7 @@ class SearchesController < ApplicationController
     @hash_unico_salvar = @hash_de_pedido.inject(:merge)
     @salvar = Search.new(@hash_unico_salvar)
     @salvar.save
-    flash[:notice] = 'Pedido realizado com sucesso.'
+    flash[:notice] = 'Pedido realizado com sucesso. Se desejar anexar uma justificativa para o pedido, acesse na tela inicial o menu Novos pedidos, mostrar pedido, pró e anexe sua justificativa.'
     render :index
 
   end
